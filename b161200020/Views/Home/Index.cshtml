@@ -1,0 +1,20 @@
+﻿@using b161200020.Entity;
+@using b161200020.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron p-5 mb-4 bg-body-tertiary rounded-3 w-100">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold text-white">Custom jumbotron</h1>
+        <p class="col-md-8 fs-4 text-white">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+        <a href="/Home/List" class="btn btn-primary btn-lg" type="button">List Product</a>
+    </div>
+</div>
+
+<div class="card-group">
+    @Html.Partial("_ProductList", Model)
+
+</div>
+

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<b161200020.Entity.Category>
+@{ 
+    var selectedCategoryId = Url.RequestContext.RouteData.Values["id"];
+}
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active" aria-current="true" href="/Home/List">Tüm Kategoriler</a>
+    @foreach (var item in Model)
+    {
+        if (selectedCategoryId != null)
+        {
+            if (item.Id == int.Parse((selectedCategoryId.ToString())))
+            {
+                //Seçilen kat ile rout id eşit
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action">@item.Name</a>
+            }
+            else
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action">@item.Name</a>
+            }
+        }
+        else
+        {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action">@item.Name</a>
+        }
+
+
+
+
+    }
+</div>

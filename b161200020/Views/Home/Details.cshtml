@@ -1,0 +1,85 @@
+﻿@using b161200020.Entity;
+@model Product
+@{
+    ViewBag.Title = "Details";
+}
+
+<div id="ProductDetails" class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col col-4 border rounded bg-secondary">
+            <img src="~/@Model.Path" class="img-fluid img-rounded w-100">
+        </div>
+        <div class="col col-8">
+            <div class="row">
+                <div class="col col-12">
+                    <h1 style="font-size: 22px;">@Model.ProductName</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    @if (Model.IsApproved)
+                    {
+                        <span class="badge  text-bg-success">In Stock (@Model.StockQuantity)</span>
+                    }
+                    else
+                    {
+                        <span class="badge  text-bg-danger">Out Stock</span>
+                    }
+                    <span class="product-number">#08654738600</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    <div id="description">@Model.Description</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    <div class="row">
+                        <div class="col col-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-half" aria-hidden="true"></i>
+                            <span class="badge text-bg-success">53</span>
+                        </div>
+                        <div class="col col-4" style="margin-left: -50px;">
+                            Yorum
+                        </div>
+                        <div class="col col-4"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12 mt-2">
+                    <h4 id="product-price">@Model.Price ₺</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    <button class="btn btn-success">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                        Add To Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col col-12">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-description-tab" data-bs-toggle="tab" data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" aria-selected="true">Description</button>
+                    <button class="nav-link" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment" type="button" role="tab" aria-controls="nav-payment" aria-selected="false">Payment Methods</button>
+                    <button class="nav-link" id="nav-Comment-tab" data-bs-toggle="tab" data-bs-target="#nav-Comment" type="button" role="tab" aria-controls="nav-Comment" aria-selected="false">Reviews</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="nav-Comment" role="tabpanel" aria-labelledby="nav-Comment-tab" tabindex="0">...</div>
+            </div>
+        </div>
+    </div>
+</div>

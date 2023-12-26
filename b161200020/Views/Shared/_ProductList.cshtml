@@ -1,0 +1,25 @@
+﻿@using b161200020.Entity;
+@using b161200020.Models;
+@model IEnumerable<ProductModel>
+
+@foreach (var urun in Model)
+{
+
+    <div class="col col-4 mt-3 ml-4" style="">
+        <div class="card" style="width: 18rem; height: 500px;">
+            <img src="~/@urun.Path" class="card-img-top" alt="@urun.ProductName" style="height: 300px;">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/Home/Details/@urun.Id">@urun.ProductName</a></h4>
+                <p class="card-text">@urun.Description</p>
+                <p class="card-text">Quantity: @urun.StockQuantity</p>
+            </div>
+            <div class="card-footer">
+                Price : <i class="fa fa-try" aria-hidden="true"></i>@urun.Price
+                <a href="/Home/Details/@urun.Id" class="btn btn-primary btn-sm float-end">
+                    Inspect
+                </a>
+            </div>
+        </div>
+    </div>
+
+}

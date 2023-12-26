@@ -1,0 +1,10 @@
+.jumbotron{
+    background-image: url(../img/helmet-bg.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 100%;
+}
+#product-price{
+    font-size: 30px;
+    font-weight: bold;
+}

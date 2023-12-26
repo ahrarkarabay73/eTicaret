@@ -1,0 +1,41 @@
+﻿@using b161200020.Entity;
+@using b161200020.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container mb-3 mt-5">
+    <div class="row">
+        <div class="col col-12">
+            @if (Model.Count() == 0)
+            {
+                <div class="alert alert-warning" role="alert" style="font-size:12px;">
+                    <i class="fa-solid fa-exclamation"></i> Product Not Found
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-success" role="alert" style="font-size:12px;">
+                    <i class="fa-solid fa-check"></i> <strong>@Model.Count()</strong> Product Found
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-3 mt-3">
+            @Html.Action("_GetCategory","Home")
+        </div>
+        <div class="col col-9">
+            
+
+            <div class="card-group">
+                @Html.Partial("_ProductList", Model)
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
