@@ -31,7 +31,7 @@ namespace b161200020.Identity
             }
 
 
-            if (!context.Users.Any(i => i.UserName == "ahrar"))
+            if (!context.Users.Any(i => i.Name == "ahrar"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
@@ -41,7 +41,7 @@ namespace b161200020.Identity
                 manager.AddToRole(user.Id, "user");
                 context.SaveChanges();
             }
-            if (!context.Users.Any(i => i.UserName == "user"))
+            if (!context.Users.Any(i => i.Name == "user"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
